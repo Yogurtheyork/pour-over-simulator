@@ -59,9 +59,29 @@
 
 ## 專案與執行狀態
 
-目前這個 GitHub repo 收錄 **README 與 iPhone 截圖**，尚未上傳 Xcode 專案原始碼，因此單獨下載此 repo 還不能編譯 App。
+此 repo 包含 Xcode 專案、SwiftUI 原始碼、Asset Catalog 與 iPhone 截圖，沒有第三方套件依賴。
 
-本機專案名稱仍為 `Plant simulator.xcodeproj`，App 內容已改成手沖模擬器。持有本機專案時，可在 Xcode 開啟專案，選擇 `Plant simulator` scheme 與已安裝的 iPhone 模擬器，按 Run 執行。使用實體 iPhone 時，需另外完成自己的簽署設定。
+專案名稱仍為 `Plant simulator.xcodeproj`，App 內容已改成手沖模擬器。
+
+### 開啟與執行
+
+目前專案使用 Xcode 27 專案格式，iOS Deployment Target 為 **27.0**，macOS Deployment Target 為 **26.6**。請使用可支援此專案格式與系統版本的 Xcode，並安裝對應的模擬器 runtime；低於 Deployment Target 的裝置無法執行。
+
+1. 下載 repo ZIP，或執行 `git clone https://github.com/Yogurtheyork/pour-over-simulator.git`。
+2. 在 Xcode 開啟根目錄的 `Plant simulator.xcodeproj`。
+3. 選擇 `Plant simulator` scheme 與 iOS 27.0 或以上的 iPhone 模擬器。
+4. 按 **⌘R** 建置並執行。也可選擇符合最低系統版本的 My Mac。
+
+使用實體 iPhone 時，需在 Signing & Capabilities 選擇自己的開發團隊，必要時更換 Bundle Identifier，並完成裝置所需的開發者設定。
+
+### 原始碼位置
+
+- `Untitled Project/MyApp.swift`：App 入口。
+- `Untitled Project/ContentView.swift`：沖煮畫面、按鈕、手勢、計時與狀態控制。
+- `Untitled Project/Assets.xcassets`：資產目錄。
+- `Plant simulator.xcodeproj`：專案與建置設定。
+
+`.gitignore` 排除 Xcode 個人操作狀態、建置產物與本機簽署檔。
 
 已確認 Mac 版本可建置，並已在 iPhone 17 模擬器開啟首頁；尚未完成實體 iPhone 驗收。
 
